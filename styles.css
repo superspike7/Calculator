@@ -15,25 +15,29 @@
     height: 620px;
     border-radius: 40px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: 1fr 4fr;
     background-color: rgba(70, 77, 45, 0.35);
     align-items: center;
     justify-content: center;
 }
 
 .screen {
-    grid-column: 1 / 5;
     background-color: rgba(23, 21, 21, 0.7);
     border-radius: 20px;
     height: 130px;
     width: 460px;
+    margin-top: 1em;
+    color: #fff;
+}
+
+.display {
+    margin: 1em;
 }
 
 .button {
     background: #8D8A8A;
     height: 70px;
-    width: 80px;
+    width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,6 +45,30 @@
     font-size: 2em;
     border-radius: 15px;
     box-shadow: 4px 4px 8px 3px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    user-select: none;
+}
+
+
+.wrapper {
+    display: grid;
+    height: 450px;
+    width: 460px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas: 
+        ". . . a"
+        ". . . a"
+        ". . . b"
+        ". . . b"
+        "c c . .";
+    align-items: center;
+    justify-content: center;
+    grid-gap: 1em;
+}
+
+.button:active{
+    background-color: cornflowerblue;
 }
 
 .operator {
@@ -49,12 +77,33 @@
 
 #equals{
     background: #FF8934;
+    grid-area: b;
+    height: 160px;
+}
+
+#equals:active {
+    background-color: cornflowerblue;
 }
 
 #clear {
     background: #E01818;
 }
 
-#add {
-    grid-row: 3 / 4;
+#clear:active {
+    background-color: cornflowerblue;
 }
+
+#add {
+    grid-area: a;
+    height: 160px;
+}
+
+#zero {
+    grid-area: c;
+    width: 220px;
+}
+
+/* .button:hover {
+    box-shadow: 8px 8px 8px 3px rgba(0, 0, 0, 0.25);
+} */
+
