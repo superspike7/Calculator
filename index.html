@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="styles.css">
-</head>
 <body>
     <div class="container">
         <div class="screen">
+            <div class="operation">
+                <h1 class="output"></h1>
+            </div>
             <div class="display">
                 <h1 class="input"></h1>
             </div>
@@ -18,6 +20,7 @@
             <div class="button operator" id="multiply">x</div>
             <div class="button operator" id="subtact">-</div>
             <div class="button operator" id="add">+</div>
+            <div class="button operator" id="backspace">⌫</div>
             <div class="button number" id="one" value="1">1</div>
             <div class="button number" id="two" value="2">2</div>
             <div class="button number" id="three" value="3">3</div>
@@ -28,7 +31,7 @@
             <div class="button number" id="eight" value="8">8</div>
             <div class="button number" id="nine" value="9">9</div>
             <div class="button number" id="zero" value="0">0</div>
-            <div class="button number" id="dot" value=".">.</div>
+            <div class="button dot" id="dot" value=".">.</div>
             <div class="button operator" id="clear">C</div>
             <div class="button operator" id="equals">=</div>
     </div>
