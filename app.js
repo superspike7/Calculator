@@ -29,8 +29,7 @@ const addOperation = e => {
 const checkDecimals = () => {
     const result = output.textContent;
     if (+result % 1 !== 0) {
-       output.textContent = Math.round(+result).toFixed(2)
-       console.log(result)
+       output.textContent = Math.round(+result).toFixed(2);
     }
 }
 
@@ -49,7 +48,7 @@ const mathOperation = {
     '+': (a, b) => +a + +b,
     '-': (a, b) => +a - +b,
     'x': (a, b) => +a * +b,
-    '÷': (a, b) => +a / +b,
+    '÷': (a, b) => +a / +b
 }
 
 
@@ -60,9 +59,7 @@ const clear = e => {
 
 };
 const backspace = e => {
-    if (input.innerHTML === '') {
-        console.log('empty')
-    } else {
+    if (input.innerHTML !== '') {
         input.removeChild(input.lastChild)};
     }
 
@@ -72,18 +69,14 @@ const addNum = e => {
     input.appendChild(num);
 }
 
-
-// fix keyboard support
-
 const numKey = e => {
-    const keyPressed = e.key.match(/[0-9]/);
+    const keyPressed = e.key;
     const num = document.createTextNode(keyPressed);
-    if (num !== null) {
+    if (/[0-9]/.test(keyPressed)) {
         input.appendChild(num);
-    } else {
-        return
+    } else if (keyPressed === 'Backspace') {
+        backspace();
     }
-    
 }
 
 const addDot = e => {
